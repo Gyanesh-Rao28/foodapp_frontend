@@ -68,7 +68,7 @@ src/
 Create a `.env` file in the root directory:
 
 ```env
-VITE_API_URI=https://foodappbackend-bice.vercel.app/api
+VITE_API_URI=<frontend-hosted-url>
 ```
 
 ## Features
@@ -113,6 +113,10 @@ VITE_API_URI=https://foodappbackend-bice.vercel.app/api
 ## Setup Instructions
 
 1. Clone repository
+```bash
+git clone https://github.com/Gyanesh-Rao28/foodapp_frontend.git frontend
+cd frontend
+```
 
 2. Install dependencies:
 ```bash
@@ -158,4 +162,4 @@ The frontend interacts with the backend through these endpoints:
 - `/dashboard` - Admin dashboard
 
 ## Author
-Gyanesh Rao
+S Gyanesh Rao
