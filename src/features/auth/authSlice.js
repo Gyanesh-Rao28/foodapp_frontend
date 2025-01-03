@@ -10,7 +10,7 @@ const initialState = {
     error: null,
 };
 
-// Login thunk
+// Login 
 export const loginUser = createAsyncThunk(
     'auth/login',
     async (credentials, { rejectWithValue }) => {
@@ -24,7 +24,7 @@ export const loginUser = createAsyncThunk(
     }
 );
 
-// Register thunk
+// Register 
 export const registerUser = createAsyncThunk(
     'auth/register',
     async (userData, { rejectWithValue }) => {
