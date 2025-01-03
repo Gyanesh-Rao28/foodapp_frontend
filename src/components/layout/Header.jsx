@@ -12,18 +12,23 @@ const Header = () => {
   const handleLogout = () => {
     dispatch(logout());
     navigate("/login");
-  };    
+  };
 
   return (
-    <header className="bg-white shadow">
+    <header className="bg-white shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <Link to="/" className="text-xl font-bold text-indigo-600">
+          {/* Logo using Raleway */}
+          <Link to="/" className="font-display text-2xl font-bold text-primary">
             Food Delivery
           </Link>
 
-          <nav className="flex items-center space-x-4">
-            <Link to="/menu" className="text-gray-700 hover:text-indigo-600">
+          {/* Navigation using Poppins */}
+          <nav className="font-body flex items-center space-x-6">
+            <Link
+              to="/menu"
+              className="text-gray-700 hover:text-primary transition-colors"
+            >
               Menu
             </Link>
 
@@ -31,25 +36,25 @@ const Header = () => {
               <>
                 <Link
                   to="/dashboard"
-                  className="text-gray-700 hover:text-indigo-600"
+                  className="text-gray-700 hover:text-primary transition-colors"
                 >
                   Dashboard
                 </Link>
                 <Link
                   to="/orders"
-                  className="text-gray-700 hover:text-indigo-600"
+                  className="text-gray-700 hover:text-primary transition-colors"
                 >
                   Orders
                 </Link>
                 <Link
                   to="/cart"
-                  className="text-gray-700 hover:text-indigo-600"
+                  className="text-gray-700 hover:text-primary transition-colors"
                 >
                   Cart ({items?.length || 0})
                 </Link>
                 <button
                   onClick={handleLogout}
-                  className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700"
+                  className="bg-primary text-white px-6 py-2 rounded-md hover:bg-primary-hover transition-colors"
                 >
                   Logout
                 </button>
@@ -57,7 +62,7 @@ const Header = () => {
             ) : (
               <Link
                 to="/login"
-                className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700"
+                className="bg-primary text-white px-6 py-2 rounded-md hover:bg-primary-hover transition-colors"
               >
                 Login
               </Link>

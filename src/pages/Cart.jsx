@@ -1,3 +1,4 @@
+// src/pages/Cart.jsx
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
@@ -42,10 +43,12 @@ const Cart = () => {
   if (items.length === 0) {
     return (
       <div className="container mx-auto px-4 py-8 text-center">
-        <h2 className="text-2xl font-bold mb-4">Your Cart is Empty</h2>
+        <h2 className="text-2xl font-heading font-bold mb-4 text-background">
+          Your Cart is Empty
+        </h2>
         <button
           onClick={() => navigate("/menu")}
-          className="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700"
+          className="bg-primary text-accent font-body px-6 py-2 rounded-md hover:bg-primary-hover transition-colors"
         >
           Go to Menu
         </button>
@@ -55,50 +58,56 @@ const Cart = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h2 className="text-2xl font-bold mb-6">Your Cart</h2>
+      <h2 className="text-2xl font-heading font-bold mb-6 text-background">
+        Your Cart
+      </h2>
 
       <div className="space-y-4">
         {items.map((item) => (
           <div
             key={item._id}
-            className="flex items-center justify-between bg-white p-4 rounded-lg shadow"
+            className="flex items-center justify-between bg-accent p-4 rounded-lg shadow"
           >
             <div className="flex-1">
-              <h3 className="font-semibold">{item.name}</h3>
-              <p className="text-indigo-600">₹{item.price} per item</p>
+              <h3 className="font-heading font-semibold text-background">
+                {item.name}
+              </h3>
+              <p className="font-body text-primary">₹{item.price} per item</p>
             </div>
 
             <div className="flex items-center space-x-4">
               {/* Quantity Controls */}
-              <div className="flex items-center border rounded">
+              <div className="flex items-center border border-secondary rounded">
                 <button
                   onClick={() =>
                     handleQuantityChange(item._id, item.quantity - 1)
                   }
-                  className="px-3 py-1 hover:bg-gray-100"
+                  className="px-3 py-1 font-body text-background hover:bg-secondary transition-colors"
                 >
                   -
                 </button>
-                <span className="px-4 py-1 border-x">{item.quantity}</span>
+                <span className="px-4 py-1 font-body text-background border-x border-secondary">
+                  {item.quantity}
+                </span>
                 <button
                   onClick={() =>
                     handleQuantityChange(item._id, item.quantity + 1)
                   }
-                  className="px-3 py-1 hover:bg-gray-100"
+                  className="px-3 py-1 font-body text-background hover:bg-secondary transition-colors"
                 >
                   +
                 </button>
               </div>
 
               {/* Total for this item */}
-              <div className="w-24 text-right">
+              <div className="w-24 text-right font-body text-background">
                 ₹{item.price * item.quantity}
               </div>
 
               {/* Remove button */}
               <button
                 onClick={() => handleRemoveItem(item._id)}
-                className="text-red-600 hover:text-red-800 px-2"
+                className="text-red-600 hover:text-red-800 px-2 transition-colors"
               >
                 ×
               </button>
@@ -107,13 +116,13 @@ const Cart = () => {
         ))}
       </div>
 
-      <div className="mt-8 border-t pt-4">
-        <div className="text-xl font-bold mb-4 text-right">
+      <div className="mt-8 border-t border-secondary pt-4">
+        <div className="text-xl font-heading font-bold mb-4 text-right text-background">
           Total: ₹{totalAmount}
         </div>
         <button
           onClick={handleCheckout}
-          className="w-full bg-indigo-600 text-white py-3 rounded-md hover:bg-indigo-700"
+          className="w-full bg-primary text-accent font-body py-3 rounded-md hover:bg-primary-hover transition-colors"
         >
           Checkout Now
         </button>

@@ -21,7 +21,6 @@ const AddMenuItem = () => {
           price: Number(formData.price),
         })
       ).unwrap();
-      // Reset form
       setFormData({
         name: "",
         category: "Appetizers",
@@ -34,28 +33,36 @@ const AddMenuItem = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow">
-      <h2 className="text-xl font-semibold mb-4">Add New Menu Item</h2>
+    <div className="max-w-md mx-auto bg-accent p-6 rounded-lg shadow">
+      <h2 className="text-xl font-heading font-semibold mb-4 text-background">
+        Add New Menu Item
+      </h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block text-sm font-medium mb-1">Name</label>
+          <label className="font-body text-sm font-medium mb-1 text-background block">
+            Name
+          </label>
           <input
             type="text"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className="w-full p-2 border rounded focus:ring-indigo-500 focus:border-indigo-500"
+            className="w-full p-2 font-body border border-secondary rounded focus:ring-1 focus:ring-primary
+                     focus:border-primary transition-colors"
             required
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-1">Category</label>
+          <label className="font-body text-sm font-medium mb-1 text-background block">
+            Category
+          </label>
           <select
             value={formData.category}
             onChange={(e) =>
               setFormData({ ...formData, category: e.target.value })
             }
-            className="w-full p-2 border rounded focus:ring-indigo-500 focus:border-indigo-500"
+            className="w-full p-2 font-body border border-secondary rounded focus:ring-1 focus:ring-primary
+                     focus:border-primary transition-colors"
           >
             <option>Appetizers</option>
             <option>Main Course</option>
@@ -65,14 +72,17 @@ const AddMenuItem = () => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-1">Price (₹)</label>
+          <label className="font-body text-sm font-medium mb-1 text-background block">
+            Price (₹)
+          </label>
           <input
             type="number"
             value={formData.price}
             onChange={(e) =>
               setFormData({ ...formData, price: e.target.value })
             }
-            className="w-full p-2 border rounded focus:ring-indigo-500 focus:border-indigo-500"
+            className="w-full p-2 font-body border border-secondary rounded focus:ring-1 focus:ring-primary
+                     focus:border-primary transition-colors"
             min="0"
             required
           />
@@ -85,14 +95,17 @@ const AddMenuItem = () => {
             onChange={(e) =>
               setFormData({ ...formData, availability: e.target.checked })
             }
-            className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+            className="h-4 w-4 text-primary focus:ring-primary border-secondary rounded"
           />
-          <label className="ml-2 block text-sm text-gray-900">Available</label>
+          <label className="ml-2 font-body text-sm text-background">
+            Available
+          </label>
         </div>
 
         <button
           type="submit"
-          className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition-colors"
+          className="w-full bg-primary text-accent font-body py-2 px-4 rounded-md 
+                   hover:bg-primary-hover transition-colors"
         >
           Add Item
         </button>

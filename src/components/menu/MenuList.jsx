@@ -1,3 +1,4 @@
+// src/components/menu/MenuList.jsx
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -24,9 +25,16 @@ const MenuList = () => {
     "Beverages",
   ];
 
-  if (loading) return <div className="text-center py-10">Loading...</div>;
+  if (loading)
+    return (
+      <div className="text-center py-10 font-body text-background">
+        Loading...
+      </div>
+    );
   if (error)
-    return <div className="text-center py-10 text-red-600">{error}</div>;
+    return (
+      <div className="text-center py-10 font-body text-red-600">{error}</div>
+    );
 
   return (
     <div className="px-4 sm:px-6 lg:px-8">
@@ -36,10 +44,10 @@ const MenuList = () => {
           <button
             key={category}
             onClick={() => dispatch(filterByCategory(category))}
-            className={`px-4 py-2 rounded-md transition-colors duration-300 ${
+            className={`font-body px-4 py-2 rounded-md transition-colors duration-300 ${
               activeCategory === category
-                ? "bg-indigo-600 text-white"
-                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                ? "bg-primary text-accent"
+                : "bg-secondary text-background hover:bg-secondary-hover"
             }`}
           >
             {category.charAt(0).toUpperCase() + category.slice(1)}

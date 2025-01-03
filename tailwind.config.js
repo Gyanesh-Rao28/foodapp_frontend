@@ -5,15 +5,15 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#FF9494",
-          hover: "#ff8080",
+          DEFAULT: "#3F72AF",
+          hover: "#355e91",
         },
         secondary: {
-          DEFAULT: "#FFD1D1",
-          hover: "#ffc2c2",
+          DEFAULT: "#DBE2EF",
+          hover: "#c4d0e0",
         },
-        accent: "#FFE3E1",
-        background: "#FFF5E4",
+        accent: "#F9F7F7",
+        background: "#112D4E",
       },
       fontFamily: {
         display: ["Raleway", "sans-serif"],

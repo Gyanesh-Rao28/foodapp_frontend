@@ -169,7 +169,7 @@ const MenuItemsList = () => {
                   <>
                     <button
                       onClick={() => handleEdit(item)}
-                      className="text-indigo-600 hover:text-indigo-900 mr-4"
+                      className="text-primary hover:text-indigo-900 mr-4"
                     >
                       Edit
                     </button>

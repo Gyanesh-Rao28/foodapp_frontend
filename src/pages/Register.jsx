@@ -18,12 +18,17 @@ const Register = () => {
 
   return (
     <div className="min-h-[calc(100vh-200px)] flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-6 text-center">Register</h2>
+      <div className="bg-accent p-8 rounded-lg shadow-md w-full max-w-md">
+        <h2 className="text-2xl font-heading font-bold mb-6 text-background text-center">
+          Register
+        </h2>
         <RegisterForm onSubmit={handleRegister} loading={loading} />
-        <p className="mt-4 text-center text-sm text-gray-600">
-          Already have an account?{' '}
-          <Link to="/login" className="text-indigo-600 hover:text-indigo-500">
+        <p className="mt-4 text-center text-sm font-body text-background/80">
+          Already have an account?{" "}
+          <Link
+            to="/login"
+            className="text-primary hover:text-primary-hover transition-colors"
+          >
             Login here
           </Link>
         </p>

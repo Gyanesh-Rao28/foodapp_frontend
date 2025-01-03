@@ -1,10 +1,10 @@
 // src/components/layout/auth/RegisterForm.jsx
-import { useState } from 'react';
+import { useState } from "react";
 
 const RegisterForm = ({ onSubmit, loading }) => {
   const [formData, setFormData] = useState({
-    username: '',
-    password: '',
+    username: "",
+    password: "",
   });
 
   const handleChange = (e) => {
@@ -13,13 +13,16 @@ const RegisterForm = ({ onSubmit, loading }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(formData);  // Pass the form data to parent component
+    onSubmit(formData);
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-6">
       <div>
-        <label htmlFor="username" className="block text-sm font-medium text-gray-700">
+        <label
+          htmlFor="username"
+          className="font-body text-sm font-medium text-background mb-1 block"
+        >
           Username
         </label>
         <input
@@ -28,12 +31,18 @@ const RegisterForm = ({ onSubmit, loading }) => {
           name="username"
           value={formData.username}
           onChange={handleChange}
-          className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-indigo-500 focus:outline-none"
+          className="font-body mt-1 block w-full rounded-md border border-secondary 
+                     px-4 py-2.5 text-background placeholder-background/50
+                     focus:border-primary focus:ring-1 focus:ring-primary 
+                     transition-colors"
           required
         />
       </div>
       <div>
-        <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+        <label
+          htmlFor="password"
+          className="font-body text-sm font-medium text-background mb-1 block"
+        >
           Password
         </label>
         <input
@@ -42,16 +51,21 @@ const RegisterForm = ({ onSubmit, loading }) => {
           name="password"
           value={formData.password}
           onChange={handleChange}
-          className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-indigo-500 focus:outline-none"
+          className="font-body mt-1 block w-full rounded-md border border-secondary 
+                     px-4 py-2.5 text-background placeholder-background/50
+                     focus:border-primary focus:ring-1 focus:ring-primary 
+                     transition-colors"
           required
         />
       </div>
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700"
+        className="w-full bg-primary text-accent font-body py-3 px-4 rounded-md 
+                   hover:bg-primary-hover disabled:opacity-50 disabled:cursor-not-allowed
+                   transition-colors text-base font-medium mt-2"
       >
-        {loading ? 'Creating account...' : 'Register'}
+        {loading ? "Creating account..." : "Register"}
       </button>
     </form>
   );
