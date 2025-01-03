@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Toaster } from "react-hot-toast";
 import PrivateRoute from './components/auth/PrivateRoute';
 import PublicRoute from './components/auth/PublicRoute';
 import Header from './components/layout/Header';
@@ -10,11 +11,13 @@ import Menu from './pages/Menu';
 import Orders from './pages/Orders';
 import Cart from './pages/Cart';
 import NotFound from './pages/NotFound';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen flex flex-col">
+        <Toaster position="bottom-center" />
         <Header />
         <main className="flex-grow container mx-auto px-4 py-8">
           <Routes>
@@ -35,6 +38,14 @@ function App() {
                 <PublicRoute>
                   <Register />
                 </PublicRoute>
+              }
+            />
+            <Route
+              path="/dashboard"
+              element={
+                <PrivateRoute>
+                  <Dashboard />
+                </PrivateRoute>
               }
             />
 

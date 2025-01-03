@@ -1,14 +1,13 @@
 import React from "react";
 import { FaEnvelope, FaPhone, FaGithub, FaLinkedin } from "react-icons/fa";
 
-const Footer = () => {
+const Footer = () => {  
   return (
     <div className="bg-gray-800 text-white">
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Contact Information */}
           <div className="flex flex-col">
-            <h3 className="text-xl font-bold mb-4">Contact Me</h3>
+            <h3 className="text-xl font-bold mb-4">Contact Me - S Gyanesh Rao</h3>
             <div className="space-y-3">
               <a
                 href="mailto:gyaneshrao28@gmail.com"
@@ -29,7 +28,7 @@ const Footer = () => {
 
           {/* Social Links */}
           <div className="flex flex-col items-start">
-            <h3 className="text-xl font-bold mb-4">Follow Me</h3>
+            <h3 className="text-xl font-bold mb-4">Socials</h3>
             <div className="flex space-x-4">
               <a
                 href="https://github.com/Gyanesh-Rao28"

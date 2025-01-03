@@ -1,18 +1,18 @@
 // src/components/layout/Header.jsx
-import { useSelector, useDispatch } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
-import { logout } from '../../features/auth/authSlice';
+import { useSelector, useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { logout } from "../../features/auth/authSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { token } = useSelector((state) => state.auth); // Changed from user to token
+  const { token } = useSelector((state) => state.auth);
   const { items } = useSelector((state) => state.cart);
 
   const handleLogout = () => {
     dispatch(logout());
-    navigate('/login');
-  };
+    navigate("/login");
+  };    
 
   return (
     <header className="bg-white shadow">
@@ -27,12 +27,24 @@ const Header = () => {
               Menu
             </Link>
 
-            {token ? ( // Changed from user to token
+            {token ? (
               <>
-                <Link to="/orders" className="text-gray-700 hover:text-indigo-600">
+                <Link
+                  to="/dashboard"
+                  className="text-gray-700 hover:text-indigo-600"
+                >
+                  Dashboard
+                </Link>
+                <Link
+                  to="/orders"
+                  className="text-gray-700 hover:text-indigo-600"
+                >
                   Orders
                 </Link>
-                <Link to="/cart" className="text-gray-700 hover:text-indigo-600">
+                <Link
+                  to="/cart"
+                  className="text-gray-700 hover:text-indigo-600"
+                >
                   Cart ({items?.length || 0})
                 </Link>
                 <button
